@@ -1,111 +1,91 @@
-# 🕵️‍♂️ OSINT Information Gathering Tool
+# 🕵️‍♂️ OSINT Email Intelligence Scanner (GUI)
 
-An advanced Python-based **OSINT (Open Source Intelligence)** tool for gathering and correlating data from public sources.
+A sleek Python-based **GUI tool** for performing Open Source Intelligence (OSINT) on email addresses.  
+It gathers information from public sources like:
 
-Supports scanning emails, usernames, IP addresses, and phone numbers using powerful APIs and tools like **EmailRep.io**, **HaveIBeenPwned**, **Nmap**, **Sherlock**, and **PhoneInfoga**.
+- 🔍 [EmailRep.io](https://emailrep.io)
+- 🔐 [HaveIBeenPwned](https://haveibeenpwned.com)
+- 👤 [Holehe](https://github.com/megadose/holehe) – checks if the email is registered on various platforms
 
----
-
-## 🚀 Features
-
-- 🔍 Email reputation checks via [EmailRep.io](https://emailrep.io)
-- 🕳️ Credential leak checks via [HaveIBeenPwned](https://haveibeenpwned.com)
-- 👤 Username checks across 300+ platforms using **Sherlock**
-- 📞 Phone number OSINT using **PhoneInfoga**
-- 🌐 IP analysis with `nmap`
-- 🧠 AI-powered data correlation engine (optional enhancement)
+Built with **Tkinter**, this desktop tool offers a modern green-on-black theme and real-time scan output.
 
 ---
 
-## 📦 Installation
+## ⚙️ Features
 
-### 1. Clone the repo
+- 📬 Validate and scan email addresses
+- 📊 Check email reputation and risk using EmailRep.io
+- 🔐 Detect data breaches using HaveIBeenPwned
+- 👁️ Scan 40+ platforms for email existence using Holehe
+- 🖥️ Interactive GUI with dark theme and live output updates
 
-```bash
-git clone https://github.com/sufikhab/osint.git
-cd osint
-```
+---
 
-### 2. Create and activate a virtual environment (optional)
+## 🧩 Requirements
 
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### 3. Install Python dependencies
+Install required Python packages:
 
 ```bash
 pip install requests colorama
 ```
 
----
-
-## 🔧 Install External Tools
-
-### 🛠 Nmap
-
-Download & install from: https://nmap.org/download.html  
-Make sure it's accessible in your terminal:
+You must also install **Holehe**:
 
 ```bash
-nmap --version
+pip install holehe
 ```
 
-### 🕵 Sherlock (for username search)
-
-```bash
-git clone https://github.com/sherlock-project/sherlock.git
-cd sherlock
-pip install -r requirements.txt
-python3 sherlock.py username
-```
-
-### 📞 PhoneInfoga (for phone OSINT)
-
-Recommended via Docker:
-
-```bash
-docker pull sundowndev/phoneinfoga
-```
-
-Or install manually: https://github.com/sundowndev/phoneinfoga
+> Ensure `holehe` is accessible from your system terminal (`holehe user@example.com`)
 
 ---
 
-## 🧪 Usage
+## 🚀 Running the Tool
 
 ```bash
 python osint.py
 ```
 
-You will be prompted to enter:
-
-- Email address, username, IP, or phone number
-- Scan type
-- View live OSINT results
+You will see a GUI window where you can enter an email address and run an OSINT scan.
 
 ---
 
-## 🔍 Sample Output
+## 🖼️ GUI Preview
+
+- Entry box for email address  
+- "Run OSINT" button  
+- Scrollable output area  
+- All scan results printed in real-time
+
+---
+
+## 🧪 Sample Output
 
 ```
-[+] Email: user@example.com
-  - Reputation: suspicious
-  - Leaked in 2 breaches
-  - Disposable: No
+🔍 Scanning: user@example.com
 
-[+] Username: hackerX
-  - Found on: GitHub, Reddit, Twitter
+📊 EmailRep.io:
+Reputation: suspicious
+Suspicious: True
+Blacklisted: True
+Domain: example.com
+Disposable: False
+Malicious Activity: True
 
-[+] Phone: +14155552671
-  - Country: United States
-  - Carrier: Verizon
-  - Format: Valid
+🔐 HaveIBeenPwned:
+Breached in: Adobe, LinkedIn
 
-[+] IP: 192.168.1.1
-  - Open Ports: [22, 80]
+📱 Holehe:
+[+] Twitter: FOUND
+[+] Facebook: FOUND
 ```
+
+---
+
+## ❗ API Access
+
+- **EmailRep.io** is free for basic use (limited rate)
+- **HaveIBeenPwned** may require an API key for frequent or advanced usage
+
 ---
 
 ## 📄 License
@@ -116,12 +96,11 @@ This project is licensed under the **MIT License**.
 
 ## 🤝 Contributing
 
-Contributions, feature requests, and bug reports are welcome!  
-Submit a pull request or open an issue to improve this tool.
+Suggestions, bug reports, and pull requests are welcome!
 
 ---
 
-## ⭐ Show Support
+## ⭐ Support
 
-If this helped your recon workflow, consider giving it a ⭐ on GitHub!
+If you found this useful, give it a ⭐ on GitHub and share it with your fellow OSINT investigators!
 
