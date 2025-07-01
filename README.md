@@ -22,8 +22,8 @@ Supports scanning emails, usernames, IP addresses, and phone numbers using power
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/osint-tool.git
-cd osint-tool
+git clone https://github.com/sufikhab/osint.git
+cd osint
 ```
 
 ### 2. Create and activate a virtual environment (optional)
